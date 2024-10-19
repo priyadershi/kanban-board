@@ -3,15 +3,15 @@ import User from "./User";
 import { images } from "../../icons/data";
 import { GoDotFill } from "react-icons/go";
 
-const Card = ({ ticket }) => {
+const Card = ({ ticket, groupBy }) => {
   return (
     <div className="card-container">
       <div className="first-row flex-sc">
         <p className="card-id">{ticket.id}</p>
-        {ticket.userId && <User userId={ticket.userId} />}
+        {groupBy !== "user" && <User userId={ticket.userId} />}
       </div>
       <div className="second-row flex-ls">
-        {ticket.status && (
+        {groupBy !== "status" && (
           <div className="status-icon-div flex-cc">
             <img
               src={images[ticket.status]}
@@ -23,7 +23,7 @@ const Card = ({ ticket }) => {
         <div className="title">{ticket.title}</div>
       </div>
       <div className="third-row flex-lc">
-        {ticket.priority !== undefined && (
+        {groupBy !== "priority" && (
           <div className="priority-icon flex-cc">
             <img src={images[ticket.priority]} alt="priority" />
           </div>

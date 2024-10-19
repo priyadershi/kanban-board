@@ -28,7 +28,7 @@ const Column = ({ groupBy, orderBy, colName, allTickets }) => {
           <Header name={colName} userId={user.id} />
           <div className="card-section">
             {tickets.map((ticket) => (
-              <Card ticket={ticket} key={ticket.id} />
+              <Card ticket={ticket} groupBy={groupBy} key={ticket.id} />
             ))}
           </div>
         </div>
