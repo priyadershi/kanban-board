@@ -1,0 +1,69 @@
+
+
+.display-container{
+    width: 5rem;
+    padding: .25rem 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: 2s;
+    /* background-color: snow; */
+    /* z-index: 1; */
+}
+
+.filter-div {
+    margin-right: .5rem;
+}
+
+.display-name {
+
+}
+
+.down-arrow {
+    /* transition: .25s; */
+}
+
+.down-arrow:hover {
+    transform: scale(1.2);
+}
+
+
+
+/* Filter components styling */
+
+
+
+.filter-container {
+    width: 15rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: .25rem;
+    border-radius: 5px;
+    font-size: .95rem;
+    background-color: whitesmoke;
+    float: left;
+    position: fixed;
+}
+
+.grouping-div {
+    padding: .5rem;
+}
+
+.ordering-div {
+    padding: .5rem;
+}
+
+select {
+    border: 1px solid cyan;
+    border-radius: 5px;
+    padding: .15rem;
+    width: 5.5rem;
+    background-color: white;
+}
+
+select option[value="Status"] {
+    border: 1px solid blue;
+    border-radius: 5px;
+    padding: .15rem;
+    width: 5.5rem;
+    background-color: white;
+}
