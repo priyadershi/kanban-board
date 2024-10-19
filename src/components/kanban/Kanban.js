@@ -1,14 +1,23 @@
 import { useEffect, useState } from "react";
-import { arrays, Data } from "../../icons/images";
+import { arrays, Data } from "../../icons/data";
 import Column from "../column/Column";
 import Display from "../display/Display";
-import "./kandan.css";
-const Kandan = () => {
-  const [group, setGroup] = useState("status");
-  const [order, setOrder] = useState("priority");
+import "./kanban.css";
+
+const Kanban = () => {
+  const initGroup = localStorage.getItem("group");
+  const initOrder = localStorage.getItem("order");
+
+  const [group, setGroup] = useState(initGroup || "status");
+  const [order, setOrder] = useState(initOrder || "priority");
 
   let groupNames = arrays[group];
   let tickets = Data.tickets;
+
+  useEffect(() => {
+    localStorage.setItem("group", group);
+    localStorage.getItem("order", order);
+  }, [group, order]);
 
   return (
     <>
@@ -21,10 +30,10 @@ const Kandan = () => {
             {groupNames.map((name) => (
               <Column
                 key={name}
-                groupVal={name}
                 groupBy={group}
                 orderBy={order}
-                tkts={tickets}
+                colName={name}
+                allTickets={tickets}
               />
             ))}
           </div>
@@ -34,4 +43,4 @@ const Kandan = () => {
   );
 };
 
-export default Kandan;
+export default Kanban;

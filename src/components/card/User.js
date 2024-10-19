@@ -4,7 +4,7 @@ import { GoDotFill } from "react-icons/go";
 import "./card.css";
 
 const User = ({ userId }) => {
-  const allUsers = data.users; //get it's value
+  const allUsers = data.users;
   const user = allUsers.find((usr) => usr.id === userId);
 
   return (

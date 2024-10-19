@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { images } from "../../icons/images";
+import { images } from "../../icons/data";
 import Filter from "./Filter";
 import "./display.css";
 
 const Display = ({ setGroup, setOrder }) => {
   const toggle = useState(false);
-  // console.log(group, order);
 
   return (
     <div

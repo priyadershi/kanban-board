@@ -1,18 +1,14 @@
-import { Data, images } from "../../icons/images";
+import { images } from "../../icons/data";
 import User from "../card/User";
 import "./column.css";
 
-const Header = ({ name, isUser }) => {
-  //if
-  let user = {};
-  if (isUser) user = Data.users.find((usr) => usr.name === name);
-
+const Header = ({ name, userId }) => {
   return (
     <>
       <div className="header-container flex-sc">
         <div className="header flex-lc">
-          {isUser ? (
-            <User userId={user.id} />
+          {userId ? (
+            <User userId={userId} />
           ) : (
             <img src={images[name]} alt={name} className="header-icon" />
           )}

@@ -20,6 +20,7 @@ const users = data.users.map((usr) => usr.name);
 export const arrays = {
   status: ["Backlog", "Todo", "In Progress", "Done", "Cancelled"],
   priority: ["No Priority", "Urgent", "High", "Medium", "Low"],
+
   user: users,
 };
 

@@ -1,7 +1,7 @@
 import "./card.css";
-import data from "../../data.json";
 import User from "./User";
-import { images } from "../../icons/images";
+import { images } from "../../icons/data";
+import { GoDotFill } from "react-icons/go";
 
 const Card = ({ ticket }) => {
   return (
@@ -28,7 +28,13 @@ const Card = ({ ticket }) => {
             <img src={images[ticket.priority]} alt="priority" />
           </div>
         )}
-        <div className="tag">{ticket.tag}</div>
+
+        <div className="tag flex-lc">
+          <span className="feature-dot flex-cc">
+            <GoDotFill />
+          </span>
+          <p>{ticket.tag} </p>
+        </div>
       </div>
     </div>
   );
