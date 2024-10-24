@@ -4,7 +4,7 @@ import Header from "./Header";
 import "./column.css";
 import { dataContext } from "../../App";
 
-const Column = ({ groupBy, orderBy, colName, allTickets }) => {
+const Column = ({ groupBy, orderBy, colName }) => {
   const { users, arrays, tickets } = useContext(dataContext);
 
   let selectedTickets = [];
@@ -18,7 +18,7 @@ const Column = ({ groupBy, orderBy, colName, allTickets }) => {
     user = users.find((usr) => usr.name === colName);
     selectedTickets = tickets.filter((tkt) => tkt.userId === user.id);
   } else if (tickets) {
-    selectedTickets = allTickets.filter(
+    selectedTickets = tickets.filter(
       (tkt) => tkt[groupBy].toLowerCase() === colName.toLowerCase()
     );
   }
