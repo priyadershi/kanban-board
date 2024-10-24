@@ -12,10 +12,15 @@ const Dropdown = ({ setState, options, type }) => {
   const [selected, setSelected] = useState(intialVal);
   const [isVisible, setIsVisible] = useState(false);
   const clickRef = useRef();
+  const dropdownRef = useRef();
 
   useEffect(() => {
     const detectOutsideClick = (event) => {
-      if (clickRef.current && !clickRef.current.contains(event.target)) {
+      if (
+        clickRef.current &&
+        !clickRef.current.contains(event.target) &&
+        !dropdownRef.current.contains(event.target)
+      ) {
         setIsVisible(false);
       }
     };
@@ -31,9 +36,14 @@ const Dropdown = ({ setState, options, type }) => {
       <div
         className="dropdown-container"
         onClick={() => setIsVisible(!isVisible)}
+        ref={dropdownRef}
       >
         {selected}
-        <img src={images.down} alt="down logo" />
+        <img
+          src={images.down}
+          alt="down logo"
+          className={isVisible && "rotate"}
+        />
       </div>
 
       <CSSTransition

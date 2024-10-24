@@ -14,14 +14,6 @@
     margin-right: .5rem;
 }
 
-.down-arrow {
-    /* transition: .25s; */
-}
-
-.down-arrow:hover {
-    transform: scale(1.2);
-}
-
 
 
 /* Filter components styling */

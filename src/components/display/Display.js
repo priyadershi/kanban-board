@@ -38,7 +38,11 @@ const Display = ({ setGroup, setOrder }) => {
         </div>
         <div className="display-name flex-cc">
           Display
-          <img src={images.down} alt="down-arrow" className="down-arrow" />
+          <img
+            src={images.down}
+            alt="down-arrow"
+            className={`down-arrow ${isVisible && "rotate"}`}
+          />
         </div>
       </div>
       {isVisible && (
