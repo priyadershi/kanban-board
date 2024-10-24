@@ -23,7 +23,7 @@ const App = () => {
 
   return (
     <>
-      {data && (
+      {data ? (
         <dataContext.Provider
           value={{
             tickets: data.tickets,
@@ -34,6 +34,8 @@ const App = () => {
         >
           <Kanban />
         </dataContext.Provider>
+      ) : (
+        <h1>Loading...</h1>
       )}
     </>
   );
