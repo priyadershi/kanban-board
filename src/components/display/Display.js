@@ -6,10 +6,15 @@ import "./display.css";
 const Display = ({ setGroup, setOrder }) => {
   const [isVisible, setIsVisible] = useState(false);
   const clickRef = useRef();
+  const displayRef = useRef();
 
   useEffect(() => {
     const detectOutsideClick = (event) => {
-      if (clickRef.current && !clickRef.current.contains(event.target)) {
+      if (
+        clickRef.current &&
+        !clickRef.current.contains(event.target) &&
+        !displayRef.current.contains(event.target)
+      ) {
         setIsVisible(false);
       }
     };
@@ -23,7 +28,7 @@ const Display = ({ setGroup, setOrder }) => {
   return (
     <div>
       <div
-        ref={clickRef}
+        ref={displayRef}
         className="display-container flex-cc"
         onClick={() => setIsVisible(!isVisible)}
       >
