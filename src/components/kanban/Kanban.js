@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import { arrays, Data } from "../../icons/data";
+import { useContext, useEffect, useState } from "react";
 import Column from "../column/Column";
 import Display from "../display/Display";
 import "./kanban.css";
+import { dataContext } from "../../App";
 
 const Kanban = () => {
   const initGroup = localStorage.getItem("group");
@@ -11,8 +11,9 @@ const Kanban = () => {
   const [group, setGroup] = useState(initGroup || "status");
   const [order, setOrder] = useState(initOrder || "priority");
 
+  const { arrays } = useContext(dataContext);
+
   let groupNames = arrays[group];
-  let tickets = Data.tickets;
 
   useEffect(() => {
     localStorage.setItem("group", group);
@@ -33,7 +34,6 @@ const Kanban = () => {
                 groupBy={group}
                 orderBy={order}
                 colName={name}
-                allTickets={tickets}
               />
             ))}
           </div>

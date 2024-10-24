@@ -1,25 +1,28 @@
-import { arrays, Data } from "../../icons/data";
+import { useContext } from "react";
 import Card from "../card/Card";
 import Header from "./Header";
 import "./column.css";
+import { dataContext } from "../../App";
 
 const Column = ({ groupBy, orderBy, colName, allTickets }) => {
-  let tickets = [];
+  const { users, arrays, tickets } = useContext(dataContext);
+
+  let selectedTickets = [];
   let user = {};
 
   if (groupBy === "priority") {
-    tickets = allTickets.filter(
+    selectedTickets = tickets.filter(
       (tkt) => arrays.priority[tkt.priority] === colName
     );
   } else if (groupBy === "user") {
-    user = Data.users.find((usr) => usr.name === colName);
-    tickets = allTickets.filter((tkt) => tkt.userId === user.id);
-  } else if (allTickets) {
-    tickets = allTickets.filter(
+    user = users.find((usr) => usr.name === colName);
+    selectedTickets = tickets.filter((tkt) => tkt.userId === user.id);
+  } else if (tickets) {
+    selectedTickets = allTickets.filter(
       (tkt) => tkt[groupBy].toLowerCase() === colName.toLowerCase()
     );
   }
-  tickets.sort((a, b) => a[orderBy] - b[orderBy]);
+  selectedTickets.sort((a, b) => a[orderBy] - b[orderBy]);
 
   return (
     <>
@@ -27,7 +30,7 @@ const Column = ({ groupBy, orderBy, colName, allTickets }) => {
         <div className="column-container">
           <Header name={colName} userId={user.id} />
           <div className="card-section">
-            {tickets.map((ticket) => (
+            {selectedTickets.map((ticket) => (
               <Card ticket={ticket} groupBy={groupBy} key={ticket.id} />
             ))}
           </div>

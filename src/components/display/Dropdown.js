@@ -1,9 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import "./dropdown.css";
-import { images } from "../../icons/data";
+import { dataContext } from "../../App";
 
 const Dropdown = ({ setState, options, type }) => {
+  const { images } = useContext(dataContext);
+
   const intialVal =
     localStorage.getItem(type) || (type === "group" ? "status" : "title");
 
@@ -31,7 +33,7 @@ const Dropdown = ({ setState, options, type }) => {
         onClick={() => setIsVisible(!isVisible)}
       >
         {selected}
-        <img src={images.down} />
+        <img src={images.down} alt="down logo" />
       </div>
 
       <CSSTransition

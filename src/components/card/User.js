@@ -1,11 +1,12 @@
-import data from "../../data.json";
 import { BiSolidUser } from "react-icons/bi";
 import { GoDotFill } from "react-icons/go";
 import "./card.css";
+import { useContext } from "react";
+import { dataContext } from "../../App";
 
 const User = ({ userId }) => {
-  const allUsers = data.users;
-  const user = allUsers.find((usr) => usr.id === userId);
+  const { users } = useContext(dataContext);
+  const user = users.find((usr) => usr.id === userId);
 
   return (
     <div className="user-container flex-cc">

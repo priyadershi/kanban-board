@@ -1,9 +1,10 @@
-import { useEffect, useRef, useState } from "react";
-import { images } from "../../icons/data";
+import { useContext, useEffect, useRef, useState } from "react";
 import Filter from "./Filter";
 import "./display.css";
+import { dataContext } from "../../App";
 
 const Display = ({ setGroup, setOrder }) => {
+  const { images } = useContext(dataContext);
   const [isVisible, setIsVisible] = useState(false);
   const clickRef = useRef();
   const displayRef = useRef();

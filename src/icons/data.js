@@ -13,15 +13,12 @@ import cancelled from "./Cancelled.svg";
 import todo from "./To-do.svg";
 import down from "./down.svg";
 import inprogress from "./in-progress.svg";
-import data from "../data.json";
-
-const users = data.users.map((usr) => usr.name);
 
 export const arrays = {
   status: ["Backlog", "Todo", "In Progress", "Done", "Cancelled"],
   priority: ["No Priority", "Urgent", "High", "Medium", "Low"],
 
-  user: users,
+  user: [],
 };
 
 export const images = {
@@ -46,5 +43,3 @@ export const images = {
   down: down,
   display: display,
 };
-
-export const Data = data;

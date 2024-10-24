@@ -1,8 +1,10 @@
-import { images } from "../../icons/data";
+import { useContext } from "react";
 import User from "../card/User";
 import "./column.css";
+import { dataContext } from "../../App";
 
 const Header = ({ name, userId }) => {
+  const { images } = useContext(dataContext);
   return (
     <>
       <div className="header-container flex-sc">

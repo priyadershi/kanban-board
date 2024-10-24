@@ -1,9 +1,11 @@
 import "./card.css";
 import User from "./User";
-import { images } from "../../icons/data";
 import { GoDotFill } from "react-icons/go";
+import { useContext } from "react";
+import { dataContext } from "../../App";
 
 const Card = ({ ticket, groupBy }) => {
+  const { images } = useContext(dataContext);
   return (
     <div className="card-container">
       <div className="first-row flex-sc">
