@@ -20,7 +20,7 @@ const User = ({ userId }) => {
             : "badge-icon flex-cc in-active"
         }
       >
-        <span className="flex-cc">
+        <span className="flex-cc dot-icon">
           <GoDotFill />
         </span>
       </div>

@@ -7,16 +7,11 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: 2s;
-    /* background-color: snow; */
-    /* z-index: 1; */
+    
 }
 
 .filter-div {
     margin-right: .5rem;
-}
-
-.display-name {
-
 }
 
 .down-arrow {
@@ -35,13 +30,15 @@
 
 .filter-container {
     width: 15rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     padding: .25rem;
     border-radius: 5px;
     font-size: .95rem;
     background-color: whitesmoke;
     float: left;
     position: fixed;
+    margin-top: 5px;
+    z-index: 2;
 }
 
 .grouping-div {
