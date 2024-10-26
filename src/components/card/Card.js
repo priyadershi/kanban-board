@@ -22,7 +22,7 @@ const Card = ({ ticket, groupBy }) => {
             />
           </div>
         )}
-        <div className="title">{ticket.title}</div>
+        <div className="title-div">{ticket.title}</div>
       </div>
       <div className="third-row flex-lc">
         {groupBy !== "priority" && (

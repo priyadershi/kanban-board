@@ -3,13 +3,12 @@
 /* card-component styles */
 
 .card-container {
-    /* min-width: 15rem; */
-    /* max-width: 17rem; */
+    height: 5.25rem;
     font-size: .75rem;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     margin-top: 10px;
-    padding: .15rem;
+    padding: .25rem;
     background-color: white;
 }
 
@@ -22,11 +21,21 @@
 
 .second-row {
     padding: .25rem;
-    font-size: .8rem;;
+    font-size: .8rem;
 }
 
 .status-icon-div {
     margin-right: .5rem;
+}
+
+
+.title-div {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
 }
 
 .third-row {
@@ -93,5 +102,5 @@
 }
 
 .in-active {
-    background-color: grey;
+    background-color: silver;
 }
