@@ -3,14 +3,14 @@
 /* card-component styles */
 
 .card-container {
-    width: 15rem;
+    /* min-width: 15rem; */
+    /* max-width: 17rem; */
     font-size: .75rem;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     margin-top: 10px;
     padding: .15rem;
     background-color: white;
-
 }
 
 
@@ -63,12 +63,6 @@
 }
 
 
-
-
-
-
-
-
 /* User component Style */
 
 
@@ -76,28 +70,28 @@
     height: 1.5rem;
     width: 2rem;
     font-size: 1.5rem;
-    overflow: hidden;
+    /* overflow: hidden; */
+    box-sizing: border-box;
 
 }
 
 .badge-icon {
     height: .5rem;
     width: .5rem;
-    font-size: 1rem;
-    /* border: 1px solid black; */
-    border-radius: .6rem;
-    padding: 2px;
-    position: relative;
-    top: .4rem;
-    right: .5rem;
-    background-color: white;
+    border: 1.5px solid rgb(241, 241, 247);;
+    border-radius: 50%;
+    transform: translate(16px, -17px);
+    display: block;
+
 }
+
+
 
 
 .active {
-    color: orange;
+    background-color: orange;
 }
 
 .in-active {
-    color: grey;
+    background-color: grey;
 }

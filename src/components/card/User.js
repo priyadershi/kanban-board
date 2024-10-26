@@ -9,21 +9,13 @@ const User = ({ userId }) => {
   const user = users.find((usr) => usr.id === userId);
 
   return (
-    <div className="user-container flex-cc">
-      <div className="user-icon flex-cc">
-        <BiSolidUser />
-      </div>
+    <div className="user-container">
+      {/* <div className="user-icon flex-cc"> */}
+      <BiSolidUser />
+      {/* </div> */}
       <div
-        className={
-          user.available
-            ? "badge-icon flex-cc active"
-            : "badge-icon flex-cc in-active"
-        }
-      >
-        <span className="flex-cc dot-icon">
-          <GoDotFill />
-        </span>
-      </div>
+        className={`badge-icon ${user.available ? "active" : "in-active"}`}
+      ></div>
     </div>
   );
 };

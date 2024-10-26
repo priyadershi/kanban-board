@@ -27,7 +27,7 @@ const Kanban = () => {
           <div className="header-section">
             <Display setGroup={setGroup} setOrder={setOrder} />
           </div>
-          <div className="main-section flex-ss">
+          <div className="main-section">
             {groupNames.map((name) => (
               <Column
                 key={name}

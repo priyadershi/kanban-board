@@ -2,6 +2,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import Filter from "./Filter";
 import "./display.css";
 import { dataContext } from "../../App";
+import { CSSTransition } from "react-transition-group";
 
 const Display = ({ setGroup, setOrder }) => {
   const { images } = useContext(dataContext);
@@ -45,11 +46,16 @@ const Display = ({ setGroup, setOrder }) => {
           />
         </div>
       </div>
-      {isVisible && (
+      <CSSTransition
+        in={isVisible}
+        classNames="fade"
+        timeout={250}
+        unmountOnExit
+      >
         <div className="filter" ref={clickRef}>
           <Filter setGroup={setGroup} setOrder={setOrder} />
         </div>
-      )}
+      </CSSTransition>
     </div>
   );
 };
