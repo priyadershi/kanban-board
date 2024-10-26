@@ -42,7 +42,7 @@ const Dropdown = ({ setState, options, type }) => {
         <img
           src={images.down}
           alt="down logo"
-          className={isVisible && "rotate"}
+          className={`down-arrow ${isVisible && "rotate"}`}
         />
       </div>
 

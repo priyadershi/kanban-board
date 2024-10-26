@@ -5,9 +5,9 @@
 .card-container {
     height: 5.25rem;
     font-size: .75rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    margin-top: 10px;
+    box-shadow: 0 0.125rem 0.7rem rgba(0, 0, 0, 0.2);
+    border-radius: 0.3rem;
+    margin-top: .5rem;
     padding: .25rem;
     background-color: white;
 }
@@ -28,6 +28,9 @@
     margin-right: .5rem;
 }
 
+.status-icon {
+    height: .85rem;
+}
 
 .title-div {
     overflow: hidden;
@@ -44,8 +47,8 @@
 
 .priority-icon {
     margin-right: .5rem;
-    border: 1px solid cyan;
-    border-radius: 5px;
+    border: .07rem solid cyan;
+    border-radius: .3rem;
     height: 1rem;
     width: 1.25rem;
     padding-right:.1rem;
@@ -59,9 +62,9 @@
 
 .tag {
     appearance: none;
-    border: 1px solid cyan;
-    border-radius: 5px;
-    padding-right: 5px;
+    border: 0.07rem px solid cyan;
+    border-radius: .3rem;
+    padding-right: .3rem;
     height: 1rem;
     color: grey;
     font-weight: 500;
@@ -87,9 +90,9 @@
 .badge-icon {
     height: .5rem;
     width: .5rem;
-    border: 1.5px solid rgb(241, 241, 247);;
+    border: 0.1rem solid rgb(241, 241, 247);
     border-radius: 50%;
-    transform: translate(16px, -17px);
+    transform: translate(1rem, -1rem);
     display: block;
 
 }

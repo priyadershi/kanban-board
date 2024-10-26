@@ -1,5 +1,5 @@
 .column-container {
-    padding: .25rem;
+    /* padding: .25rem; */
 }
 
 .header-container {
@@ -14,9 +14,15 @@
 
 .header-icon {
     margin-right: .5rem;
+    height: .9rem;
 }
 
 .add {
     margin-right: .5rem;
+    height: 1rem;
+}
+
+.three-dot {
+    height: 1rem;
 }
 
