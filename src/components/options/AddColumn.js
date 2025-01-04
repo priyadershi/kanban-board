@@ -10,13 +10,14 @@ const AddColumn = ({ setIsVisible }) => {
   const [input, setInput] = useState("");
   const { setColumns } = useContext(dataContext);
 
-  const handleRename = () => {
+  const handleRename = (e) => {
+    e.preventDefault();
     if (input === "") return;
     setColumns((cols) => {
       return [...cols, input];
     });
     setIsVisible(false);
-    alert("column added");
+    // alert("column added");
   };
 
   useEffect(() => {
@@ -37,17 +38,22 @@ const AddColumn = ({ setIsVisible }) => {
   }, []);
 
   return (
-    <div className="rename-container" ref={dropdownRef}>
+    <form
+      onSubmit={handleRename}
+      className="rename-container"
+      ref={dropdownRef}
+    >
       <label>Enter new column name</label>
       <input
         type="text"
+        placeholder="enter column name"
         ref={clickRef}
         onChange={(e) => setInput(e.target.value)}
       />
-      <button onClick={handleRename} className={"rename-btn"}>
+      <button type="submit" className={"rename-btn"}>
         Add
       </button>
-    </div>
+    </form>
   );
 };
 

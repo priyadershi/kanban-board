@@ -6,12 +6,14 @@ import { useState } from "react";
 import Add from "../add/Add";
 import OptionMenu from "../options/OptionMenu";
 import Rename from "../options/Rename";
+import Remove from "../options/Remove";
 
 const Header = ({ name, userId }) => {
   const { images } = useContext(dataContext);
   const [visibleAddForm, setVisibleAddForm] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
   const [showRename, setShowRename] = useState(false);
+  const [showRemove, setShowRemove] = useState(false);
 
   const menuOptions = ["Rename Column", "Remove Column"];
 
@@ -40,12 +42,14 @@ const Header = ({ name, userId }) => {
             onClick={() => setShowOptions(!showOptions)}
           />
           {showRename && <Rename name={name} setIsVisible={setShowRename} />}
+          {showRemove && <Remove colName={name} setIsVisible={setShowRemove} />}
           {showOptions && (
             <OptionMenu
               options={menuOptions}
               isVisible={showOptions}
               setIsVisible={setShowOptions}
               setShowRename={setShowRename}
+              setShowRemove={setShowRemove}
             />
           )}
         </div>

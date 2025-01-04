@@ -8,7 +8,8 @@ const Rename = ({ name, setIsVisible }) => {
   const dropdownRef = useRef();
   const { columns, setColumns, tickets, setTickets } = useContext(dataContext);
 
-  const handleRename = () => {
+  const handleRename = (e) => {
+    e.preventDefault();
     const newName = clickRef.current.value;
     console.log(newName);
     if (name !== newName && columns.find((col) => col === newName)) {
@@ -36,6 +37,7 @@ const Rename = ({ name, setIsVisible }) => {
         setIsVisible(false);
       }
     };
+    clickRef.current.value = name;
 
     document.addEventListener("mousedown", detectOutsideClick);
     return () => {
@@ -44,13 +46,17 @@ const Rename = ({ name, setIsVisible }) => {
   }, []);
 
   return (
-    <div className="rename-container" ref={dropdownRef}>
+    <form
+      className="rename-container"
+      ref={dropdownRef}
+      onSubmit={handleRename}
+    >
       <label>enter new name</label>
       <input type="text" ref={clickRef} />
-      <button onClick={handleRename} className={"rename-btn"}>
+      <button type="submit" className={"rename-btn"}>
         rename
       </button>
-    </div>
+    </form>
   );
 };
 

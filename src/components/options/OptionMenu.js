@@ -3,7 +3,13 @@ import { CSSTransition } from "react-transition-group";
 import "./options.css";
 import { dataContext } from "../../App";
 
-const OptionMenu = ({ isVisible, setIsVisible, options, setShowRename }) => {
+const OptionMenu = ({
+  isVisible,
+  setIsVisible,
+  options,
+  setShowRename,
+  setShowRemove,
+}) => {
   const { images } = useContext(dataContext);
 
   const clickRef = useRef();
@@ -29,6 +35,8 @@ const OptionMenu = ({ isVisible, setIsVisible, options, setShowRename }) => {
   const handleClick = (optionName) => {
     if (optionName === "Rename Column") {
       setShowRename(true);
+    } else if (optionName === "Remove Column") {
+      setShowRemove(true);
     }
   };
 
