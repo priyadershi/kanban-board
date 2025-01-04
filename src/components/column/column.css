@@ -20,9 +20,19 @@
 .add {
     margin-right: .5rem;
     height: 1rem;
+    cursor: pointer;
+    transition: .15s;
+}
+.add:hover {
+    transform: scale(1.25);
 }
 
 .three-dot {
     height: 1rem;
+    cursor: pointer;
+    transition: .15s;
 }
 
+.three-dot:hover {
+    transform: scale(1.25);
+}

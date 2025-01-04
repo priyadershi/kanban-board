@@ -5,80 +5,100 @@
       "title": "Update User Profile Page UI",
       "tag": ["Feature request"],
       "userId": "usr-1",
+      "due-data": "08 sep 2025",
       "status": "Todo",
-      "priority": 4
+      "priority": 4,
+      "column": "column-1"
     },
     {
       "id": "CAM-2",
       "title": "Add Multi-Language Support - Enable multi-language support within the application.",
       "tag": ["Feature Request"],
+      "due-data": "19 mar 2026",
       "userId": "usr-2",
       "status": "In progress",
-      "priority": 3
+      "priority": 3,
+      "column": "column-2"
     },
     {
       "id": "CAM-3",
       "title": "Optimize Database Queries for Performance",
       "tag": ["Feature Request"],
       "userId": "usr-2",
+      "due-data": "02 jun 2026",
       "status": "In progress",
-      "priority": 1
+      "priority": 1,
+      "column": "column-3"
     },
     {
       "id": "CAM-4",
       "title": "Implement Email Notification System",
       "tag": ["Feature Request"],
       "userId": "usr-1",
+      "due-data": "12 jun 2026",
       "status": "In progress",
-      "priority": 3
+      "priority": 3,
+      "column": "column-2"
     },
     {
       "id": "CAM-5",
       "title": "Enhance Search Functionality",
       "tag": ["Feature Request"],
       "userId": "usr-5",
+      "due-data": "28 apr 2026",
       "status": "In progress",
-      "priority": 0
+      "priority": 0,
+      "column": "column-1"
     },
     {
       "id": "CAM-6",
       "title": "Third-Party Payment Gateway",
       "tag": ["Feature Request"],
+      "due-data": "28 mar 2026",
       "userId": "usr-2",
       "status": "Todo",
-      "priority": 1
+      "priority": 1,
+      "column": "column-1"
     },
     {
       "id": "CAM-7",
       "title": "Create Onboarding Tutorial for New Users",
       "tag": ["Feature Request"],
+      "due-data": "28 dec 2026",
       "userId": "usr-1",
       "status": "Backlog",
-      "priority": 2
+      "priority": 2,
+      "column": "column-3"
     },
     {
       "id": "CAM-8",
       "title": "Implement Role-Based Access Control (RBAC)",
       "tag": ["Feature Request"],
       "userId": "usr-3",
+      "due-data": "26 feb 2025",
       "status": "In progress",
-      "priority": 3
+      "priority": 3,
+      "column": "column-5"
     },
     {
       "id": "CAM-9",
       "title": "Upgrade Server Infrastructure",
       "tag": ["Feature Request"],
+      "due-data": "30 jan 2025",
       "userId": "usr-5",
       "status": "Todo",
-      "priority": 2
+      "priority": 2,
+      "column": "column-5"
     },
     {
       "id": "CAM-10",
       "title": "Conduct Security Vulnerability Assessment",
       "tag": ["Feature Request"],
+      "due-data": "26 jan 2025",
       "userId": "usr-4",
       "status": "Backlog",
-      "priority": 1 
+      "priority": 1,
+      "column": "column-4"
     }
   ],
   "users": [

@@ -2,9 +2,19 @@ import { useContext } from "react";
 import User from "../card/User";
 import "./column.css";
 import { dataContext } from "../../App";
+import { useState } from "react";
+import Add from "../add/Add";
+import OptionMenu from "../options/OptionMenu";
+import Rename from "../options/Rename";
 
 const Header = ({ name, userId }) => {
   const { images } = useContext(dataContext);
+  const [visibleAddForm, setVisibleAddForm] = useState(false);
+  const [showOptions, setShowOptions] = useState(false);
+  const [showRename, setShowRename] = useState(false);
+
+  const menuOptions = ["Rename Column", "Remove Column"];
+
   return (
     <>
       <div className="header-container flex-sc">
@@ -17,10 +27,30 @@ const Header = ({ name, userId }) => {
           <div className="header-name">{name}</div>
         </div>
         <div className="options">
-          <img src={images.add} className="add" alt="plus" />
-          <img src={images.threeDot} className="three-dot" alt="three-dot" />
+          <img
+            src={images.add}
+            className="add"
+            alt="plus"
+            onClick={() => setVisibleAddForm(!visibleAddForm)}
+          />
+          <img
+            src={images.threeDot}
+            className="three-dot"
+            alt="three-dot"
+            onClick={() => setShowOptions(!showOptions)}
+          />
+          {showRename && <Rename setIsVisible={setShowRename} />}
+          {showOptions && (
+            <OptionMenu
+              options={menuOptions}
+              isVisible={showOptions}
+              setIsVisible={setShowOptions}
+              setShowRename={setShowRename}
+            />
+          )}
         </div>
       </div>
+      {visibleAddForm && <Add setIsVisible={setVisibleAddForm} />}
     </>
   );
 };

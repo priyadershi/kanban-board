@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import Kanban from "./components/kanban/Kanban";
 import { arrays, images } from "./icons/data";
+import initialData from "./data.json";
 
 export const dataContext = createContext({
   tickets: [],
@@ -10,13 +11,8 @@ export const dataContext = createContext({
 });
 
 const App = () => {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    fetch("https://api.quicksell.co/v1/internal/frontend-assignment")
-      .then((res) => res.json())
-      .then((obj) => setData(obj));
-  }, []);
+  const [data, setData] = useState(initialData);
+  const [tickets, setTickets] = useState(data.tickets);
 
   //creating array of usernames to display on headers
   if (data) arrays.user = data.users.map((usr) => usr.name);
@@ -26,10 +22,11 @@ const App = () => {
       {data ? (
         <dataContext.Provider
           value={{
-            tickets: data.tickets,
+            tickets: tickets,
             users: data.users,
             arrays: arrays,
             images: images,
+            setTickets: setTickets,
           }}
         >
           <Kanban />

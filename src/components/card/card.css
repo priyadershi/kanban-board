@@ -3,13 +3,16 @@
 /* card-component styles */
 
 .card-container {
-    height: 5.25rem;
+    height: 6rem;
     font-size: .75rem;
     box-shadow: 0 0.125rem 0.7rem rgba(0, 0, 0, 0.2);
     border-radius: 0.3rem;
     margin-top: .5rem;
     padding: .25rem;
     background-color: white;
+    cursor: default;
+    user-select: none;
+    position: relative;
 }
 
 
@@ -106,4 +109,20 @@
 
 .in-active {
     background-color: silver;
+}
+
+.bin-icon {
+    font-size: 20px;
+    position: absolute;
+    right: 10px;
+    color: red;
+    cursor: pointer;
+}
+
+.edit-icon {
+    font-size: 20px;
+    position: absolute;
+    right: 40px;
+    color: blue;
+    cursor: pointer;
 }
