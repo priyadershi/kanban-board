@@ -46,21 +46,21 @@
     padding: .5rem;
 }
 
-select {
+/* select {
     border: 1px solid cyan;
     border-radius: .3rem;
     padding: .15rem;
     width: 5.5rem;
     background-color: white;
-}
+} */
 
-select option[value="Status"] {
+/* select option[value="Status"] {
     border: 1px solid blue;
     border-radius: .3rem;
     padding: .15rem;
     width: 5.5rem;
     background-color: white;
-}
+} */
 
 
 

@@ -1,14 +1,28 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import "./options.css";
 import { useEffect } from "react";
+import { dataContext } from "../../App";
 
-const Rename = ({ setIsVisible }) => {
+const Rename = ({ name, setIsVisible }) => {
   const clickRef = useRef();
   const dropdownRef = useRef();
+  const { columns, setColumns, tickets, setTickets } = useContext(dataContext);
 
   const handleRename = () => {
-    console.log("renamed");
+    const newName = clickRef.current.value;
+    console.log(newName);
+    if (name !== newName && columns.find((col) => col === newName)) {
+      alert("Column with same name already exist");
+      return;
+    }
 
+    const updatedList = columns.map((col) => (col === name ? newName : col));
+    setColumns(updatedList);
+    const updatedTickets = tickets.map((tkt) =>
+      tkt.column === name ? { ...tkt, column: newName } : tkt
+    );
+    setTickets(updatedTickets);
+    console.log(updatedTickets);
     setIsVisible(false);
   };
 

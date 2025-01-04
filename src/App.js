@@ -8,11 +8,24 @@ export const dataContext = createContext({
   users: [],
   arrays: {},
   images: {},
+  setColumns: () => {},
+  columns: [],
+  setTickets: () => {},
 });
+
+const columnNames = [
+  "column-1",
+  "column-2",
+  "column-3",
+  "column-4",
+  "column-5",
+  "column-6",
+];
 
 const App = () => {
   const [data, setData] = useState(initialData);
   const [tickets, setTickets] = useState(data.tickets);
+  const [columns, setColumns] = useState(columnNames);
 
   //creating array of usernames to display on headers
   if (data) arrays.user = data.users.map((usr) => usr.name);
@@ -27,6 +40,8 @@ const App = () => {
             arrays: arrays,
             images: images,
             setTickets: setTickets,
+            columns: columns,
+            setColumns: setColumns,
           }}
         >
           <Kanban />

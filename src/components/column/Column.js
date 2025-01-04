@@ -4,24 +4,27 @@ import Header from "./Header";
 import "./column.css";
 import { dataContext } from "../../App";
 
-const Column = ({ groupBy, orderBy, colName }) => {
+const Column = ({ orderBy, colName }) => {
   const { users, arrays, tickets } = useContext(dataContext);
 
   let selectedTickets = [];
   let user = {};
 
-  if (groupBy === "priority") {
-    selectedTickets = tickets.filter(
-      (tkt) => arrays.priority[tkt.priority] === colName
-    );
-  } else if (groupBy === "user") {
-    user = users.find((usr) => usr.name === colName);
-    selectedTickets = tickets.filter((tkt) => tkt.userId === user.id);
-  } else if (tickets) {
-    selectedTickets = tickets.filter(
-      (tkt) => tkt[groupBy].toLowerCase() === colName.toLowerCase()
-    );
-  }
+  // if (groupBy === "priority") {
+  //   selectedTickets = tickets.filter(
+  //     (tkt) => arrays.priority[tkt.priority] === colName
+  //   );
+  // } else if (groupBy === "user") {
+  //   user = users.find((usr) => usr.name === colName);
+  //   selectedTickets = tickets.filter((tkt) => tkt.userId === user.id);
+  // } else if (tickets) {
+  //   selectedTickets = tickets.filter(
+  //     (tkt) => tkt[groupBy].toLowerCase() === colName.toLowerCase()
+  //   );
+  // }
+
+  selectedTickets = tickets.filter((tkt) => tkt.column === colName);
+
   selectedTickets.sort((a, b) => a[orderBy] - b[orderBy]);
 
   return (
@@ -31,7 +34,11 @@ const Column = ({ groupBy, orderBy, colName }) => {
           <Header name={colName} userId={user.id} />
           <div className="card-section">
             {selectedTickets.map((ticket) => (
-              <Card ticket={ticket} groupBy={groupBy} key={ticket.id} />
+              <Card
+                ticket={ticket}
+                // groupBy={groupBy}
+                key={ticket.id}
+              />
             ))}
           </div>
         </div>

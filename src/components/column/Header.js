@@ -19,11 +19,11 @@ const Header = ({ name, userId }) => {
     <>
       <div className="header-container flex-sc">
         <div className="header flex-lc">
-          {userId ? (
+          {/* {userId ? (
             <User userId={userId} />
           ) : (
             <img src={images[name]} alt={name} className="header-icon" />
-          )}
+          )} */}
           <div className="header-name">{name}</div>
         </div>
         <div className="options">
@@ -39,7 +39,7 @@ const Header = ({ name, userId }) => {
             alt="three-dot"
             onClick={() => setShowOptions(!showOptions)}
           />
-          {showRename && <Rename setIsVisible={setShowRename} />}
+          {showRename && <Rename name={name} setIsVisible={setShowRename} />}
           {showOptions && (
             <OptionMenu
               options={menuOptions}
@@ -50,7 +50,9 @@ const Header = ({ name, userId }) => {
           )}
         </div>
       </div>
-      {visibleAddForm && <Add setIsVisible={setVisibleAddForm} />}
+      {visibleAddForm && (
+        <Add setIsVisible={setVisibleAddForm} colName={name} />
+      )}
     </>
   );
 };

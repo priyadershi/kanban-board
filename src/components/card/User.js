@@ -9,13 +9,14 @@ const User = ({ userId }) => {
   const user = users.find((usr) => usr.id === userId);
 
   return (
-    <div className="user-container">
-      {/* <div className="user-icon flex-cc"> */}
-      <BiSolidUser />
-      {/* </div> */}
-      <div
-        className={`badge-icon ${user.available ? "active" : "in-active"}`}
-      ></div>
+    <div className="user-window">
+      <div className="user-container">
+        <BiSolidUser />
+        <div
+          className={`badge-icon ${user.available ? "active" : "in-active"}`}
+        ></div>
+      </div>
+      <span>{userId}</span>
     </div>
   );
 };

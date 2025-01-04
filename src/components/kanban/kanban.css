@@ -6,7 +6,22 @@
 .header-section {
     padding: .75rem;
     background-color: white;
-    
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-column {
+    padding: 10px;
+    background-color: rgb(94, 133, 94);
+    width: 150px;
+    font-size: 1rem;
+    display: inline-block;
+}
+
+.add-column:hover {
+    background-color: rgb(79, 110, 79);
+    color: white;
+
 }
 
 .main-section {
