@@ -8,8 +8,8 @@ import { MdEdit } from "react-icons/md";
 import { useState } from "react";
 import EditCard from "../add/EditCard";
 
-const Card = ({ ticket, groupBy }) => {
-  const { images, tickets, setTickets } = useContext(dataContext);
+const Card = ({ ticket }) => {
+  const { images, tickets, setTickets, setActive } = useContext(dataContext);
 
   const handleDelete = (id) => {
     const updatedTickets = tickets.filter((tkt) => tkt.id !== id);
@@ -21,8 +21,22 @@ const Card = ({ ticket, groupBy }) => {
     setShowEdit(true);
   };
 
+  const handleDragStart = (e, tkt) => {
+    setActive(tkt);
+    e.target.style.opacity = "0.4";
+  };
+  const handleDragEnd = (e) => {
+    e.target.style.opacity = "1";
+    setActive({});
+  };
+
   return (
-    <div draggable className="card-container">
+    <div
+      className="card-container"
+      draggable
+      onDragStart={(e) => handleDragStart(e, ticket)}
+      onDragEnd={handleDragEnd}
+    >
       <div className="first-row flex-sc">
         <p className="card-id">{ticket.id}</p>
         {<User userId={ticket.userId} />}

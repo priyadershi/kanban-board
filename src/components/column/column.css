@@ -1,5 +1,5 @@
 .column-container {
-    /* padding: .25rem; */
+    min-height: 5rem;
 }
 
 .header-container {

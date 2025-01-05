@@ -10,7 +10,7 @@
     margin-top: .5rem;
     padding: .25rem;
     background-color: white;
-    cursor: default;
+    cursor: move;
     user-select: none;
     position: relative;
 }
