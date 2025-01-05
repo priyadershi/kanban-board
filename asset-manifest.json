@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/kanban-board/static/css/main.37721104.css",
-    "main.js": "/kanban-board/static/js/main.8b465a8d.js",
+    "main.css": "/kanban-board/static/css/main.32a2c104.css",
+    "main.js": "/kanban-board/static/js/main.6389398c.js",
     "static/js/453.b995ab79.chunk.js": "/kanban-board/static/js/453.b995ab79.chunk.js",
     "static/media/Display.svg": "/kanban-board/static/media/Display.d8bd8cfc7076d748e857437982b6a4d0.svg",
     "static/media/Cancelled.svg": "/kanban-board/static/media/Cancelled.4f408c2c1fe6d73cda4a80bb489f71da.svg",
@@ -19,12 +19,12 @@
     "static/media/SVG - Urgent Priority colour.svg": "/kanban-board/static/media/SVG - Urgent Priority colour.61cc83eaf9fba3dc2c099c52e1acbc94.svg",
     "static/media/Backlog.svg": "/kanban-board/static/media/Backlog.ca19f3384a6472ef8afd3b69570b6d48.svg",
     "static/media/To-do.svg": "/kanban-board/static/media/To-do.cc86c0d7cbf95ee13431e3cc2e936542.svg",
-    "main.37721104.css.map": "/kanban-board/static/css/main.37721104.css.map",
-    "main.8b465a8d.js.map": "/kanban-board/static/js/main.8b465a8d.js.map",
+    "main.32a2c104.css.map": "/kanban-board/static/css/main.32a2c104.css.map",
+    "main.6389398c.js.map": "/kanban-board/static/js/main.6389398c.js.map",
     "453.b995ab79.chunk.js.map": "/kanban-board/static/js/453.b995ab79.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.37721104.css",
-    "static/js/main.8b465a8d.js"
+    "static/css/main.32a2c104.css",
+    "static/js/main.6389398c.js"
   ]
 }
