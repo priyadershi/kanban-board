@@ -3,13 +3,11 @@ import { CSSTransition } from "react-transition-group";
 import "./dropdown.css";
 import { dataContext } from "../../App";
 
-const Dropdown = ({ setState, options, type }) => {
+const Dropdown = ({ options }) => {
   const { images } = useContext(dataContext);
+  const { setOrderBy, orderBy } = useContext(dataContext);
 
-  const intialVal =
-    localStorage.getItem(type) || (type === "group" ? "status" : "title");
-
-  const [selected, setSelected] = useState(intialVal);
+  const [selected, setSelected] = useState(orderBy);
   const [isVisible, setIsVisible] = useState(false);
   const clickRef = useRef();
   const dropdownRef = useRef();
@@ -59,7 +57,7 @@ const Dropdown = ({ setState, options, type }) => {
               onClick={() => {
                 setSelected(option);
                 setIsVisible(false);
-                setState(option.toLowerCase());
+                setOrderBy(option);
               }}
               className={`option ${selected === option && "selected"}`}
             >

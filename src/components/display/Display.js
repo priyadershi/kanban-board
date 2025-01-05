@@ -4,7 +4,7 @@ import "./display.css";
 import { dataContext } from "../../App";
 import { CSSTransition } from "react-transition-group";
 
-const Display = ({ setGroup, setOrder }) => {
+const Display = () => {
   const { images } = useContext(dataContext);
   const [isVisible, setIsVisible] = useState(false);
   const clickRef = useRef();
@@ -53,7 +53,7 @@ const Display = ({ setGroup, setOrder }) => {
         unmountOnExit
       >
         <div className="filter" ref={clickRef}>
-          <Filter setGroup={setGroup} setOrder={setOrder} />
+          <Filter />
         </div>
       </CSSTransition>
     </div>
