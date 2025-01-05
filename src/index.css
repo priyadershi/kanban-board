@@ -67,6 +67,23 @@ img {
 }
 
 
+.login-register {
+  padding: 12px 24px;
+  font-size: 20px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.719);
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  font-weight: 500;
+  cursor: pointer;
+}
 
 
 

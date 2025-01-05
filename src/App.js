@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import Kanban from "./components/kanban/Kanban";
 import { arrays, images } from "./icons/data";
 import initialData from "./data.json";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export const dataContext = createContext({
   tickets: [],
@@ -35,9 +36,11 @@ const App = () => {
   //creating array of usernames to display on headers
   if (data) arrays.user = data.users.map((usr) => usr.name);
 
+  const { user, loginWithRedirect } = useAuth0();
+
   return (
     <>
-      {data ? (
+      {user ? (
         <dataContext.Provider
           value={{
             tickets: tickets,
@@ -56,7 +59,9 @@ const App = () => {
           <Kanban />
         </dataContext.Provider>
       ) : (
-        <h1>Loading...</h1>
+        <button onClick={() => loginWithRedirect()} className="login-register">
+          Click Here to Login/Register
+        </button>
       )}
     </>
   );

@@ -32,3 +32,23 @@
     justify-content: center ;
     gap: .5rem;
 }
+
+.user-name {
+    font-weight: 600;
+    /* margin: 0 20px; */
+}
+
+.logout {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.15); 
+    /* width: 150px; */
+    font-size: 1rem;
+    display: inline-block;
+    border-radius: 5px;
+    margin-left: 30px;
+    cursor: pointer;
+
+}
+.logout:hover {
+    background-color: rgba(0, 0, 0, 0.24); 
+}

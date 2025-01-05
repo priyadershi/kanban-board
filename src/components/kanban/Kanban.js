@@ -4,6 +4,7 @@ import Display from "../display/Display";
 import "./kanban.css";
 import { dataContext } from "../../App";
 import AddColumn from "../options/AddColumn";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Kanban = () => {
   const { columns } = useContext(dataContext);
@@ -11,6 +12,8 @@ const Kanban = () => {
   let columnNames = columns;
 
   const [showAddColumn, setShowAddColumn] = useState(false);
+  const { user, logout } = useAuth0();
+  // console.log(user);
 
   return (
     <>
@@ -24,6 +27,14 @@ const Kanban = () => {
             >
               add new column
             </button>
+            <div>
+              <span className="user-name">
+                Welcome {user.name.split(" ")[0]}
+              </span>
+              <span className="logout" onClick={(e) => logout()}>
+                Logout
+              </span>
+            </div>
             {showAddColumn && <AddColumn setIsVisible={setShowAddColumn} />}
           </div>
           <div className="main-section">
