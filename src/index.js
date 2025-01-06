@@ -12,7 +12,7 @@ root.render(
       domain="dev-uw80hzpkv261bbbp.us.auth0.com"
       clientId="DT00d5qmipF2EhYQOcVOOqlvRKxhsTL3"
       authorizationParams={{
-        redirect_uri: window.location.origin,
+        redirect_uri: "https://priyadershi.github.io/kanban-board/callback",
       }}
     >
       <App />
